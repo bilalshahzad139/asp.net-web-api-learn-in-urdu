@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIPrac", "WebAPIPrac\WebAPIPrac.csproj", "{452D5C1B-0805-432A-B157-30C3278CF9D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCPracWithAPI", "MVCPracWithAPI\MVCPracWithAPI.csproj", "{7D769B61-B8A3-4A91-AF4A-B5F773AF5C45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{452D5C1B-0805-432A-B157-30C3278CF9D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452D5C1B-0805-432A-B157-30C3278CF9D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452D5C1B-0805-432A-B157-30C3278CF9D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{452D5C1B-0805-432A-B157-30C3278CF9D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D769B61-B8A3-4A91-AF4A-B5F773AF5C45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D769B61-B8A3-4A91-AF4A-B5F773AF5C45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D769B61-B8A3-4A91-AF4A-B5F773AF5C45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D769B61-B8A3-4A91-AF4A-B5F773AF5C45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

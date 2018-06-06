@@ -1,0 +1,70 @@
+﻿
+<h1>Web API</h1>
+
+
+<a href="#" id="lnkGET1">Get 1 Request</a> <br />
+<a href="#" id="lnkGET2">Get 2 Request</a> <br />
+<a href="#" id="lnkPost">Post Request</a>
+
+
+@section scripts{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var basePath = '@Url.Content("~")';
+
+            $("#lnkGET1").click(function () {
+
+                var settings = {
+                    type: "GET",
+                    dataType: "json",
+                    url: basePath + "api/StudentData/GetData1",
+                    data: {},
+                    success: function (result) {
+                        alert(result);
+                    }
+                };
+
+                $.ajax(settings);
+
+                return false;
+            });
+
+            $("#lnkGET2").click(function () {
+
+                var settings = {
+                    type: "GET",
+                    dataType: "json",
+                    url: basePath + "api/StudentData/GetData2?a=10&b=20",
+                    data: {},
+                    success: function (result) {
+                        alert(result);
+                    }
+                };
+
+                $.ajax(settings);
+
+                return false;
+            });
+
+            $("#lnkPost").click(function () {
+
+                var dataToSend = { id: 1, name: "abc" };
+
+                var settings = {
+                    type: "POST",
+                    dataType: "json",
+                    url: basePath + "api/StudentData/Save",
+                    data: dataToSend,
+                    success: function (result) {
+                        alert(result);
+                    }
+                };
+
+                $.ajax(settings);
+                return false;
+            });
+        });
+    </script>
+}
