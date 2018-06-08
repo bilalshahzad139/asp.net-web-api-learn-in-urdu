@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section scripts{
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+
+        var token = '@ViewBag.Token';
+        if (!token) {
+            alert('invalid token');
+            return false;
+        }
+        else {
+            sessionStorage.setItem('accessToken', token);
+        }
+
+        $("#btnGetData").click(function () {
+
+            var dataToSend = {};
+
+            var settings = {
+                type: "GET",
+                dataType: "json",
+                headers: {
+                    'Authorization': 'Bearer ' + sessionStorage.getItem('accessToken')
+                },
+                url: "http://localhost:29650/api/StudentData/GetData1",
+                data: dataToSend,
+                success: function (result) {
+                    alert(result);
+                }
+            };
+
+            $.ajax(settings);
+
+            return false;
+        });
+    });
+    </script>
+
+}
+
+
+<h1>Welcome Home</h1>
+<button id="btnGetData">Get Data</button>
