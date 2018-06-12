@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //var a = sessionStorage.getItem('accessToken');
+            //alert(a);
+            if (!sessionStorage.getItem('accessToken'))
+                window.location.href = "login.html";
+
+            $("#btnGetData").click(function () {
+
+                var dataToSend = {};
+
+                var settings = {
+                    type: "GET",
+                    dataType: "json",
+                    headers : {
+                        'Authorization' : 'Bearer ' + sessionStorage.getItem('accessToken')
+                    },
+                    url: "http://localhost:29650/api/StudentData/GetUserAddress",
+                    data: dataToSend,
+                    success: function (result) {
+                        $("#data").html(result);
+                    }
+                };
+
+                $.ajax(settings);
+
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Welcome </h1>
+    <button id="btnGetData">Get Data</button>
+    <div id="data">
+
+    </div>
+</body>
+</html>

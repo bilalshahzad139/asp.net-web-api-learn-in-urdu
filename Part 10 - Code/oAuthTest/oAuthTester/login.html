@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#btnLogin").click(function () {
+
+                var dataToSend = {};
+                dataToSend.username = $("#txtLogin").val();
+                dataToSend.password = $("#txtPassword").val();
+                dataToSend.grant_type = "password";
+
+                var settings = {
+                    type: "POST",
+                    dataType: "json",
+                    url: "http://localhost:29650/token",
+                    data: dataToSend,
+                    success: function (result) {
+                        console.log(result);
+                        sessionStorage.setItem('accessToken', result.access_token);
+                        //sessionStorage.setItem('username', result.userName);
+                        
+                        window.location.href = "home.html";
+                    },
+                    error: function (result) {
+                        alert("Bad Request");
+                    }
+                };
+
+                $.ajax(settings);
+
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        Login: <input type="text" id="txtLogin" /> <br />
+        Password: <input type="password" id="txtPassword" /><br />
+        <button id="btnLogin">Login</button>
+
+    </div>
+</body>
+</html>
